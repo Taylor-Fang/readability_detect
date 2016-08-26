@@ -32,7 +32,7 @@ int main()
 		my_map.insert(pair<const char,unsigned int>(character[i],i));
 	}
 
-	ifstream fin("parameter.txt");
+	ifstream fin("parameter.txt");//马尔可夫转移概率矩阵
 	if(!fin)
 	{
 		cout<<"can not open"<<endl;
@@ -61,6 +61,7 @@ int main()
 	}
 }
 
+//消除字符串其他字符，如数字，#，$...等等
 void normalize(string & str)
 {
 	for(int i = 0;i<str.length();i++)
@@ -75,6 +76,7 @@ void normalize(string & str)
 	}
 }
 
+//获取字符串的相邻双字符
 vec_string bigram(string & str)
 {
 	normalize(str);
@@ -92,6 +94,7 @@ vec_string bigram(string & str)
 	return vs;
 }
 
+//求字符串可读性概率
 double avg_transition_prob(string & str,double log_prob_mat[27][27],map_char_int & my_map)
 {
 	double log_prob = 0.0;

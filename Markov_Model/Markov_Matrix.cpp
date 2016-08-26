@@ -35,9 +35,9 @@ int main()
 	cout.precision(16);
 	cout.setf(ios::fixed);
 	map<const char,unsigned int> my_map;
-	string filename1 = "big.txt";
-	string filename2 = "good.txt";
-	string filename3 = "bad.txt";
+	string filename1 = "big.txt";//预料库
+	string filename2 = "good.txt";//可读字符串文本
+	string filename3 = "bad.txt";//不可读字符串文本
 
 	for(int i = 0;i<27;i++)
 	{
